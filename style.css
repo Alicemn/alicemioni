@@ -1,0 +1,613 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+}
+* {
+    cursor: none;
+}
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color:lab(58 87.64 100.06);
+    border-radius: 50%;
+    pointer-events: none; /* Assicura che il cursore non interferisca con altri eventi */
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Assicura che il cursore sia sopra gli altri elementi */
+}
+
+/* left-panel */
+
+#left-panel {
+    height: 100%;
+    width: 50%;
+    background-color: #090909;
+    position: fixed;
+}
+
+#left-cont {
+    display: block;
+    flex-direction: row;
+    margin-top: 32px;
+    padding-left: 32px;
+    padding-right: 16px;
+    color: #767676;
+}
+
+#upper-cont {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#upper-cont * {
+    margin: 0;
+}
+
+#name-prof {
+    margin: 0;
+}
+
+#profession {
+    margin-top: 8px;
+}
+
+#contacts-ig {
+    margin: 0;
+    padding-left: 35.92%;
+}
+
+#mail-ig {
+    margin-top: 8px;
+}
+@media (min-width: 769px) {
+
+#bottom-cont {
+    margin: 0;
+    padding-right: 104px;
+    position: absolute;
+    bottom: 32px;
+}
+
+}
+
+.cv{
+    margin-top: 20px;
+}
+
+.button-cont{
+    max-height: 0px; /* Maximum height to show part of the text initially */
+    overflow: hidden; /* Hides text that goes beyond the max height */
+    transition: max-height 0.8s ease-in-out; /* Smooth transition for expanding */
+}
+
+.cv-cont {
+    display: flex;
+    margin-top: 50px;
+}
+
+.cv button {
+    display: block; /* Ensures the button is on a new line */
+    margin: 20px 0; /* Spacing around the button */
+}
+
+.cv-cont *{
+    margin: 0;
+}
+
+.dates{
+    margin-left: 17%;
+}
+
+.edu{
+    margin-top: 8px;
+}
+.date{
+    margin-top: 8px;
+}
+
+.studies{
+    width: 300px;
+}
+
+.date2{
+    margin-top: 25px;
+}
+
+.date3{
+    margin-top: 25px;
+}
+
+
+#name {
+    font-size: 16px;
+    color: #F8F8F8;
+}
+
+#contacts {
+    font-size: 16px;
+    color: #F8F8F8;
+}
+
+a {
+    color: #767676;
+    text-decoration: none;
+
+}
+
+a:hover {
+    color:lab(58 87.64 100.06);
+    text-decoration: none;
+}
+
+/* right-panel */
+
+#right-panel {
+    height: 100%;
+    width: 50%;
+    background-color: #090909;
+    position: fixed;
+    overflow-y: scroll;
+    right: 0;
+}
+
+#right-cont {
+    margin-top: 0px;
+    padding-left: 0;
+    padding-right: 32px;
+    overflow-y: scroll;
+    color: #767676;
+    font-size: 14px;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth; /* Aggiunto per una transizione fluida */
+}
+
+.project{
+    margin-top:32px;
+    margin-bottom: 32px;
+    scroll-snap-align: start;
+}
+
+.number, .projname, .type, .year {
+    margin: 0;
+    padding: 0;
+    color: #F8F8F8;
+    font-size: 16px;
+}
+
+.projcont {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.team {
+    margin-top: 8px;
+    padding: 0;
+}
+
+.teacher {
+    margin-top: 37px;
+    padding: 0;
+}
+
+.client {
+    margin-top: 8px;
+    padding: 0;
+}
+
+.assistant {
+    margin-top: 37px;
+    padding: 0;
+}
+
+.proj-info2 {
+    min-width: 170px;
+    padding-left: 10%;
+}
+
+.proj-info4 {
+    padding-left: 20%;
+}
+
+.container {
+    margin: 0;
+    padding-right: 15%;
+}
+
+.abstract {
+    max-height: 66px; /* Imposta un'altezza massima per visualizzare solo una parte del testo */
+    overflow: hidden; /* Nasconde il testo che eccede l'altezza massima */
+    transition: max-height 0.8s ease-in-out; /* Effetto di transizione per l'espansione */
+}
+
+.container button {
+    display: block; /* Assicura che il bottone sia su una nuova linea */
+    margin: 20px 0; /* Spaziatura intorno al bottone */
+}
+
+.expand-button {
+    background-color: #d3d3d3; /* Grigio chiaro */
+    border: none;
+    border-radius: 50%; /* Rende il bottone circolare */
+    width: 20px;
+    height: 20px;
+    position: relative; /* Posiziona le linee in modo assoluto rispetto al bottone */
+    transition: background-color 0.3s; /* Transizione fluida del colore di sfondo */
+}
+
+.expand-button:hover {
+    background-color:lab(58 87.64 100.06); /* Arancione */
+}
+
+.line {
+    position: absolute;
+    width: 14px;
+    height: 1px;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.line1 {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.line2 {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.expand-button.active .line1 {
+    opacity: 0; /* Nasconde la linea verticale trasformando il "+" in "-" */
+}
+
+.expand-button.active .line2 {
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.img-container {
+    padding-right: 10%;
+    margin-top: 50px;
+}
+
+.carousel-img {
+    max-height: 428px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    padding-right: 15px;
+}
+
+.img-carousel {
+    scroll-snap-type: x mandatory;
+}
+
+.img-pagination {
+    margin-top: 20px;
+}
+
+.pagination-dot {
+    display: inline-block;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: #767676;
+    margin: 0 3px;
+}
+
+.pagination-dot.active {
+    background-color: #F8F8F8;
+}
+
+/* Stili per il pulsante play nei video */
+.video-container {
+    position: relative;
+    display: flex;
+}
+
+.video-container video {
+    display: flex;
+    max-height: 428px;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+.play-button, .pause-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.play-button:active, .pause-button:active {
+    transform: translate(-50%, -50%) scale(0.95); /* Aggiunto un effetto di scala per il clic */
+}
+.pause-button{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #left-panel{
+        height: auto;
+        width: auto;
+        display: flex;
+        position: sticky;
+        margin: 0;
+    }
+    #left-cont {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #name-prof, #contacts-ig, #description {
+        text-align: left;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #contacts-ig{
+        padding-left: 50px;
+    }
+
+    #name {
+        font-size: 14px;
+    }
+
+    #contacts {
+        font-size: 14px;
+    }
+
+    #description {
+        font-size: 14px;
+        padding-right: 100px;
+        margin-top: 50px;
+        position: sticky;
+        bottom: 10px;
+    }
+    #right-panel{
+        height: auto;
+        width: auto;
+        display: flex;
+        position: sticky;
+        margin: 0;
+    }
+
+    #right-cont {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .project {
+        margin-top: 50px;
+        margin-bottom: 8px;
+        padding-left: 10px;
+    }
+
+    .number, .projname, .type, .year{
+        font-size: 14px;
+    }
+
+    .proj-info3{
+        padding-right: 2%;
+    }
+
+    .proj-info4{
+        padding-left: 1%;
+    }
+
+    .proj-info2{
+    padding-left: 2%;
+    }
+
+    .container {
+        padding-left: 0;
+        padding-right: 100px;
+    }
+
+    .img-container {
+        padding-right: 0;
+        padding-left: 0px;
+        padding-right: 10px;
+    }
+
+    .carousel-img {
+        max-height: 300px;
+    }
+    /* Stili per il pulsante play nei video */
+    .video-container {
+        position: relative;
+        display: flex;
+    }
+    
+    .video-container video {
+        display: flex;
+        max-height: 300px;
+        flex-shrink: 0;
+        margin-right: 10px;
+    }
+
+.play-button, .pause-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.play-button:active, .pause-button:active {
+    transform: translate(-50%, -50%) scale(0.95); /* Aggiunto un effetto di scala per il clic */
+}
+.pause-button{
+    display: none;
+}
+
+}
+
+
+@media (max-width: 390px) {
+
+    #left-panel{
+        height: auto;
+        width: auto;
+        display: flex;
+        position: sticky;
+        margin: 0;
+    }
+    #left-cont {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #name-prof, #contacts-ig, #description {
+        text-align: left;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #contacts-ig{
+        padding-left: 50px;
+    }
+
+    #name {
+        font-size: 14px;
+    }
+
+    #contacts {
+        font-size: 14px;
+    }
+
+    #bottom-cont {
+        font-size: 14px;
+        padding-right: 10px;
+        margin-top: 150px;
+        bottom: 10px;
+    }
+
+    #right-panel{
+        height: auto;
+        width: auto;
+        display: flex;
+        position: sticky;
+        margin: 0;
+    }
+
+    #right-cont {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .project {
+        margin-top: 50px;
+        margin-bottom: 8px;
+        padding-left: 10px;
+    }
+
+    .number, .projname, .type, .year{
+        font-size: 14px;
+    }
+
+    .proj-info3{
+        display: none;
+    }
+
+    .proj-info4{
+        display: none;
+    }
+
+    .proj-info{
+    min-width: 140px;
+    }
+    .proj-info2{
+        min-width: 200px;
+        }
+
+    .container {
+        padding-left: 0;
+        padding-right: 50px;
+    }
+
+    .img-container {
+        padding-right: 0;
+        padding-left: 0px;
+        padding-right: 10px;
+    }
+
+    .carousel-img {
+        max-height: 200px;
+    }
+    /* Stili per il pulsante play nei video */
+.video-container {
+    position: relative;
+    display: flex;
+}
+
+.video-container video {
+    display: flex;
+    max-height: 200px;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.play-button, .pause-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.play-button:active, .pause-button:active {
+    transform: translate(-50%, -50%) scale(0.95); /* Aggiunto un effetto di scala per il clic */
+}
+.pause-button{
+    display: none;
+}
+
+}
