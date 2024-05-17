@@ -1,0 +1,153 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    background-color: black;
+    cursor: none ;
+}
+
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color:lab(58 87.64 100.06);
+    border-radius: 50%;
+    pointer-events: none; /* Assicura che il cursore non interferisca con altri eventi */
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Assicura che il cursore sia sopra gli altri elementi */
+}
+#closeButton {
+    position: fixed; /* o absolute, a seconda della tua struttura di layout */
+    top: 32px; /* Adegua secondo il layout */
+    right: 32px; /* Adegua secondo il layout */
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    border: none;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    outline: none;
+    display: inline-block;
+    padding: 0;
+}
+
+#closeButton::before, #closeButton::after {
+    content: '';
+    position: absolute;
+    width: 1px; /* Spessore delle linee */
+    height: 14px; /* Lunghezza delle linee */
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+}
+
+#closeButton::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#closeButton::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#closeButton:hover {
+    background-color: lab(58 87.64 100.06); /* Placeholder, converti LAB in HEX o RGB */
+}
+
+.container{
+    margin: 0;
+    padding: 0;
+}
+
+.upper-cont{
+    display: flex;
+    margin: 32,0px;
+    padding: 32px;
+    color: gray;
+}
+
+.title {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+.title-1 {
+    margin: 0;
+    padding: 0;
+}
+
+.tools {
+    margin: 0;
+    padding-left: 20%;
+}
+
+.tools-2 {
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container{
+    display: grid;
+    column-gap: 32px;
+    row-gap: 40px;
+    grid-auto-columns: 350px;
+    grid-auto-rows: 400px;
+}
+
+.item1{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin: 32px;
+}
+
+.img-container{
+    background-color: gray;
+    width: 300px;
+    height: 300px;
+}
+
+.description-cont{
+    color: gray;
+    margin-top: 32px;
+    width: 300px;
+}
+
+.description-cont *{
+    margin-top: 0px;
+    margin-bottom: 2px;
+}
+
+.date{
+    text-align: right;
+
+}
+
+.item2{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin: 32px;
+}
+
+
+.item4{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    margin: 32px;
+}
+
+.item5{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin: 32px;
+}
+
+.item6{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin: 32px;
+}

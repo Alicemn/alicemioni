@@ -61,11 +61,27 @@ body, html {
 
 #contacts-ig {
     margin: 0;
-    padding-left: 35.92%;
+    padding-left: 20%;
 }
 
 #mail-ig {
     margin-top: 8px;
+}
+
+#my-cool-3d-proj{
+    margin: 0;
+    padding-left: 17%;
+}
+
+#check{
+    margin: 0;
+    font-size: 16px;
+    color: #F8F8F8;
+}
+
+#my-cool{
+    margin-top: 8px;
+    
 }
 @media (min-width: 769px) {
 
@@ -361,6 +377,11 @@ a:hover {
         padding-right: 10px;
     }
 
+    #upper-cont{
+        display: flex;
+        flex-direction: column;
+    }
+
     #name-prof, #contacts-ig, #description {
         text-align: left;
         padding-left: 0;
@@ -368,7 +389,13 @@ a:hover {
     }
 
     #contacts-ig{
-        padding-left: 50px;
+        padding-left: 0px;
+        margin-top: 20px;
+    }
+
+    #my-cool-3d-proj{
+        padding-left: 0px;
+        margin-top: 20px;
     }
 
     #name {
@@ -494,6 +521,16 @@ a:hover {
         padding-right: 10px;
     }
 
+    #upper-cont{
+        display: flex;
+        flex-direction: column;
+    }
+
+    upper-cont *{
+        margin: 0;
+        padding: 0;
+    }
+
     #name-prof, #contacts-ig, #description {
         text-align: left;
         padding-left: 0;
@@ -501,7 +538,13 @@ a:hover {
     }
 
     #contacts-ig{
-        padding-left: 50px;
+        padding-left: 0px;
+        margin-top: 20px;
+    }
+
+    #my-cool-3d-proj{
+        padding-left: 0px;
+        margin-top: 20px;
     }
 
     #name {
