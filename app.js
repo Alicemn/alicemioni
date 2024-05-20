@@ -103,27 +103,6 @@ document.addEventListener("DOMContentLoaded", function () {
             updatePagination(pageIndex);
             handleMediaPlayback(elements[pageIndex]);
         });
-
-        const playButtons = project.querySelectorAll('.play-button');
-        const pauseButtons = project.querySelectorAll('.pause-button');
-
-        playButtons.forEach(button => {
-            const video = button.previousElementSibling;
-            button.addEventListener('click', () => {
-                video.play();
-                button.style.display = 'none';
-                button.nextElementSibling.style.display = 'flex';
-            });
-        });
-
-        pauseButtons.forEach(button => {
-            const video = button.previousElementSibling.previousElementSibling;
-            button.addEventListener('click', () => {
-                video.pause();
-                button.style.display = 'none';
-                button.previousElementSibling.style.display = 'flex';
-            });
-        });
     });
 
     
@@ -139,4 +118,44 @@ document.querySelectorAll('.cv-button').forEach(button => {
             button.classList.remove('active');
         }
     });
+    
+    var videos = document.querySelectorAll("video");
+
+    // Setup Intersection Observer for all videos
+    var observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              entry.target.pause();
+              console.log("Video paused due to not being in viewport");
+            } else {
+              entry.target.play();
+              console.log("Video played due to being in viewport");
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+      // Observe each video
+      videos.forEach((video) => observer.observe(video));
+      // Pause videos when the page is not visible
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "hidden") {
+          videos.forEach((video) => {
+            video.pause();
+            console.log("Video paused due to visibility change");
+          });
+        }
+      });
+
+      document.addEventListener('click', function(event) {
+        // Controlla se l'elemento cliccato è il body o un figlio del body escludendo bottoni e link
+        if (event.target === document.body || 
+           (event.target.parentNode === document.body && 
+            event.target.tagName !== 'BUTTON' && 
+            event.target.tagName !== 'A')) {
+            document.body.classList.toggle('light-mode');
+        }
+    });
 });
+

@@ -1,3 +1,18 @@
+:root{
+    --backgroundDark:#090909;
+    --textColorDark:#767676;
+    --titleColorDark: #F8F8F8;
+    --accentColor: lab(58 87.64 100.06);
+    --bottonColorDark:#d3d3d3;
+    --cursorcolorDark:lab(58 87.64 100.06);
+
+    --background:#f8f8f8;
+    --textColor:#767676;
+    --titleColor:#090909;
+    --bottonColor:#090909; 
+    --cursorcolor:lab(58 -87.64 -100.06);
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -6,6 +21,15 @@ body, html {
     font-weight: 300;
     font-size: 14px;
 }
+
+.light-mode {
+    --backgroundDark:var(--background);
+    --textColorDark: var(--textColor);
+    --titleColorDark:var(--titleColor);
+    --bottonColorDark:var(--bottonColor);
+    --cursorcolorDark:var(--cursorcolor);  
+}
+
 * {
     cursor: none;
 }
@@ -13,7 +37,7 @@ body, html {
     position: fixed;
     width: 20px;
     height: 20px;
-    background-color:lab(58 87.64 100.06);
+    background-color:var(--cursorcolorDark);
     border-radius: 50%;
     pointer-events: none; /* Assicura che il cursore non interferisca con altri eventi */
     mix-blend-mode: difference;
@@ -26,7 +50,7 @@ body, html {
 #left-panel {
     height: 100%;
     width: 50%;
-    background-color: #090909;
+    background-color: var(--backgroundDark); 
     position: fixed;
 }
 
@@ -36,7 +60,7 @@ body, html {
     margin-top: 32px;
     padding-left: 32px;
     padding-right: 16px;
-    color: #767676;
+    color: var(--textColorDark);
 }
 
 #upper-cont {
@@ -76,7 +100,7 @@ body, html {
 #check{
     margin: 0;
     font-size: 16px;
-    color: #F8F8F8;
+    color: var(--titleColorDark);
 }
 
 #my-cool{
@@ -144,22 +168,22 @@ body, html {
 
 #name {
     font-size: 16px;
-    color: #F8F8F8;
+    color: var(--titleColorDark);
 }
 
 #contacts {
     font-size: 16px;
-    color: #F8F8F8;
+    color: var(--titleColorDark);
 }
 
 a {
-    color: #767676;
+    color: var(--textColorDark);
     text-decoration: none;
 
 }
 
 a:hover {
-    color:lab(58 87.64 100.06);
+    color:var(--accentColor);
     text-decoration: none;
 }
 
@@ -168,7 +192,7 @@ a:hover {
 #right-panel {
     height: 100%;
     width: 50%;
-    background-color: #090909;
+    background-color: var(--backgroundDark);
     position: fixed;
     overflow-y: scroll;
     right: 0;
@@ -179,7 +203,7 @@ a:hover {
     padding-left: 0;
     padding-right: 32px;
     overflow-y: scroll;
-    color: #767676;
+    color: var(--textColorDark);
     font-size: 14px;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth; /* Aggiunto per una transizione fluida */
@@ -194,7 +218,7 @@ a:hover {
 .number, .projname, .type, .year {
     margin: 0;
     padding: 0;
-    color: #F8F8F8;
+    color: var(--titleColorDark);
     font-size: 16px;
 }
 
@@ -250,7 +274,7 @@ a:hover {
 }
 
 .expand-button {
-    background-color: #d3d3d3; /* Grigio chiaro */
+    background-color: var(--bottonColorDark); /* Grigio chiaro */
     border: none;
     border-radius: 50%; /* Rende il bottone circolare */
     width: 20px;
@@ -260,14 +284,14 @@ a:hover {
 }
 
 .expand-button:hover {
-    background-color:lab(58 87.64 100.06); /* Arancione */
+    background-color:var(--accentColor); /* Arancione */
 }
 
 .line {
     position: absolute;
     width: 14px;
     height: 1px;
-    background-color: black;
+    background-color: var(--backgroundDark);
     top: 50%;
     left: 50%;
     transform-origin: center;
@@ -296,7 +320,7 @@ a:hover {
 }
 
 .carousel-img {
-    max-height: 428px;
+    max-height: 400px;
     flex-shrink: 0;
     scroll-snap-align: start;
     padding-right: 15px;
@@ -315,12 +339,12 @@ a:hover {
     height: 5px;
     width: 5px;
     border-radius: 50%;
-    background-color: #767676;
+    background-color: var(--textColorDark);
     margin: 0 3px;
 }
 
 .pagination-dot.active {
-    background-color: #F8F8F8;
+    background-color: var(--titleColorDark);
 }
 
 /* Stili per il pulsante play nei video */
@@ -331,34 +355,9 @@ a:hover {
 
 .video-container video {
     display: flex;
-    max-height: 428px;
+    max-height: 400px;
     flex-shrink: 0;
     margin-right: 10px;
-}
-.play-button, .pause-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    user-select: none;
-}
-
-.play-button:active, .pause-button:active {
-    transform: translate(-50%, -50%) scale(0.95); /* Aggiunto un effetto di scala per il clic */
-}
-.pause-button{
-    display: none;
 }
 
 @media (max-width: 768px) {
@@ -478,32 +477,6 @@ a:hover {
         flex-shrink: 0;
         margin-right: 10px;
     }
-
-.play-button, .pause-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    user-select: none;
-}
-
-.play-button:active, .pause-button:active {
-    transform: translate(-50%, -50%) scale(0.95); /* Aggiunto un effetto di scala per il clic */
-}
-.pause-button{
-    display: none;
-}
 
 }
 
@@ -629,32 +602,6 @@ a:hover {
     max-height: 200px;
     flex-shrink: 0;
     margin-right: 10px;
-}
-
-.play-button, .pause-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    user-select: none;
-}
-
-.play-button:active, .pause-button:active {
-    transform: translate(-50%, -50%) scale(0.95); /* Aggiunto un effetto di scala per il clic */
-}
-.pause-button{
-    display: none;
 }
 
 }
